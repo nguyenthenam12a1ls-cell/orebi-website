@@ -1,0 +1,34 @@
+﻿# Environment variables
+.env
+.env.local
+.env*.local
+admin/.env
+client/.env
+server/.env
+
+# Dependencies
+node_modules/
+admin/node_modules/
+client/node_modules/
+server/node_modules/
+
+# Build
+dist/
+build/
+.next/
+out/
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Python
+.venv/
+venv/
+__pycache__/
