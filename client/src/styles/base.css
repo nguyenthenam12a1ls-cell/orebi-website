@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-bodyFont bg-bgLight text-primary antialiased;
+  }
+  
+  /* Tùy chỉnh thanh cuộn cho đẹp */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-secondary/30 rounded-full hover:bg-secondary/50 transition-colors;
+  }
+}
+
+/* Hiệu ứng chuyển động mượt mà cho mọi thứ */
+* {
+  transition-property: color, background-color, border-color, transform, shadow;
+  transition-duration: 200ms;
+  transition-timing-function: ease-in-out;
+}
