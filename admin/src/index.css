@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: 'Outfit', sans-serif; /* Font chữ tròn trịa, hiện đại */
+}
+
+body {
+  @apply bg-[#F0F2F5] text-slate-800 antialiased;
+}
+
+/* --- 1. THANH CUỘN MÀU GRADIENT (SCROLLBAR) --- */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #3b82f6, #8b5cf6); /* Xanh sang Tím */
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #2563eb, #7c3aed);
+}
+
+/* --- 2. CÁC CLASS TIỆN ÍCH RIÊNG (UTILITIES) --- */
+@layer utilities {
+  /* Hiệu ứng kính mờ */
+  .glass-effect {
+    @apply bg-white/70 backdrop-blur-xl border border-white/40 shadow-sm;
+  }
+  
+  /* Nền sidebar tối mờ ảo */
+  .sidebar-glass {
+    @apply bg-[#0f172a]/95 backdrop-blur-xl border-r border-white/5;
+  }
+
+  /* Chữ màu Gradient */
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600;
+  }
+
+  /* Animation: Trượt từ dưới lên */
+  .animate-slide-up {
+    animation: slideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  
+  /* Animation: Fade In */
+  .animate-fade-in {
+    animation: fadeIn 0.4s ease-out forwards;
+  }
+
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+}
+
+/* Thanh cuộn riêng cho Sidebar tối màu */
+.dark-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+.dark-scrollbar::-webkit-scrollbar-track {
+  background: transparent; 
+}
+.dark-scrollbar::-webkit-scrollbar-thumb {
+  background: #4b5563; 
+  border-radius: 10px;
+}
